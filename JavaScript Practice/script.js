@@ -140,5 +140,28 @@ function timer() {
   }, 2000);
 }
 
-const ans = timer();
-// ans(); // Already running, prints 12 every 2 seconds
+// const ans = timer(); // Starts timer automatically
+
+
+
+/***********************
+ * 6. Event Delegation
+ * Handling events on parent element instead of each child
+ ***********************/
+
+let parent = document.querySelector("#parent");
+parent.addEventListener("click", function (details) {
+  if (details.target.id === "play") {
+    console.log("Play Clicked");
+  } else if (details.target.id === "pause") {
+    console.log("Pause Clicked");
+  }
+});
+
+/* 
+Explanation:
+- Instead of adding click listeners to every child button (#play, #pause), 
+  we listen on the parent element (#parent).
+- Use `details.target` to detect which child was clicked.
+- Saves memory and is scalable for dynamic child elements.
+*/
