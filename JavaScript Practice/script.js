@@ -11,7 +11,7 @@ function Book(name, author, date, code) {
     );
   }
 
-  // Properties
+  // Properties (use =, not :)
   this.name = name;
   this.author = author;
   this.date = date;
@@ -44,14 +44,12 @@ const book1 = new Book("Abc", "Xyz", "12/01/2025", "#CODR");
 
 // Class declaration
 class Student {
-  // Constructor inside class
   constructor(name, age) {
     this.name = name;
     this.age = age;
 
     // Method inside constructor
-    // (better practice is defining methods outside constructor, 
-    // but shown here for clarity)
+    // (better practice: define methods outside constructor)
     this.printStudent = function () {
       console.log("Student name : " + name + " | Age : " + age);
     };
@@ -74,8 +72,7 @@ function MakeHuman(name, age) {
   this.age = age;
 }
 
-// Adding a shared method using prototype
-// (saves memory by avoiding method re-creation for every object)
+// Adding shared method using prototype
 MakeHuman.prototype.printName = function () {
   console.log(this.name);
 };
@@ -100,21 +97,48 @@ function abcd() {
 }
 // abcd.call(obj); // Output: "Atom"
 
-
 /*** #2 Apply ***/
-// Same as call, but arguments are passed as an array
+// Like call, but arguments passed as an array
 function xyz(a, b, c) {
   console.log(this, "Params in Array After this :", a, b, c);
 }
-// xyz.apply(obj, [1, 2, 3]); 
-// Output: { name: 'Atom', age: '23' } Params in Array After this : 1 2 3
-
+// xyz.apply(obj, [1, 2, 3]);
 
 /*** #3 Bind ***/
-// Does NOT call immediately. Returns a new function with bound "this".
+// Returns a new function with bound "this" (does not call immediately)
 function bindFunc() {
   console.log(this.name);
 }
-
 const bindFnCall = bindFunc.bind(obj);
 bindFnCall(); // Output: "Atom"
+
+
+
+/***********************
+ * 5. Closures
+ * Functions that “remember” variables from parent scope
+ ***********************/
+
+// Example 1: Counter closure
+function countParent() {
+  let count = 0; // private variable
+  return function counter() {
+    count++;
+    console.log(count);
+  };
+}
+
+const val = countParent();
+val(); // 1
+val(); // 2
+
+// Example 2: Timer closure
+function timer() {
+  var a = 12; // variable remembered by inner function
+  return setInterval(function () {
+    console.log(a);
+  }, 2000);
+}
+
+const ans = timer();
+// ans(); // Already running, prints 12 every 2 seconds
