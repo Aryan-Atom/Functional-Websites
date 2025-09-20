@@ -49,8 +49,9 @@ class Student {
     this.name = name;
     this.age = age;
 
-    // Method inside constructor (not recommended in real apps, 
-    // better to define outside, but works for learning)
+    // Method inside constructor
+    // (better practice is defining methods outside constructor, 
+    // but shown here for clarity)
     this.printStudent = function () {
       console.log("Student name : " + name + " | Age : " + age);
     };
@@ -64,14 +65,36 @@ s1.printStudent();
 
 
 /***********************
- * 3. Call, Apply, Bind
+ * 3. Prototypal Inheritance
+ ***********************/
+
+// Constructor function for Human
+function MakeHuman(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Adding a shared method using prototype
+// (saves memory by avoiding method re-creation for every object)
+MakeHuman.prototype.printName = function () {
+  console.log(this.name);
+};
+
+// Create instance
+const human = new MakeHuman("Atom", 23);
+human.printName(); // Output: "Atom"
+
+
+
+/***********************
+ * 4. Call, Apply, Bind
  * Ways to explicitly set "this"
  ***********************/
 
 const obj = { name: "Atom", age: "23" };
 
 /*** #1 Call ***/
-// Immediately calls function with given "this"
+// Immediately invokes function with "this" set to obj
 function abcd() {
   console.log(this.name);
 }
@@ -79,7 +102,7 @@ function abcd() {
 
 
 /*** #2 Apply ***/
-// Similar to call, but takes arguments as array
+// Same as call, but arguments are passed as an array
 function xyz(a, b, c) {
   console.log(this, "Params in Array After this :", a, b, c);
 }
