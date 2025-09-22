@@ -170,15 +170,12 @@ Explanation:
 
 /***********************
  * 7. Callback vs Promise vs Async/Await
- * Using axios for API calls
  ***********************/
-
 
 const axios = window.axios;
 
-/* ---- CALLBACK STYLE ----
-   Nested callbacks can become "callback hell".
-*/
+/* ---- CALLBACK STYLE ---- */
+
 function getDataWithCallback(callback) {
   axios.get("...")
     .then(response => {
@@ -189,7 +186,7 @@ function getDataWithCallback(callback) {
     });
 }
 
-// Usage
+
 getDataWithCallback(function (err, data) {
   if (err) {
     console.error("Error (Callback):", err);
@@ -199,22 +196,27 @@ getDataWithCallback(function (err, data) {
 });
 
 
-/* ---- PROMISE STYLE ----
-   Cleaner than callbacks, avoids nesting.
-*/
+/* ---- PROMISE STYLE ---- */
+
 function getDataWithPromise() {
-  return axios.get("...");
+  return new Promise((resolve, reject) => {
+    axios.get("...")
+      .then(response => {
+        resolve(response.data); 
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 }
 
-// Usage
+
 getDataWithPromise()
-  .then(res => console.log("Data (Promise):", res.data))
-  .catch(err => console.error("Error (Promise):", err));
+  .then(data => console.log("Data (Promise with resolve/reject):", data))
+  .catch(err => console.error("Error (Promise with resolve/reject):", err));
 
+/* ---- ASYNC/AWAIT STYLE ---- */
 
-/* ---- ASYNC/AWAIT STYLE ----
-   Looks synchronous, easier to read/maintain.
-*/
 async function getDataAsync() {
   try {
     const res = await axios.get("...");
@@ -224,7 +226,7 @@ async function getDataAsync() {
   }
 }
 
-// Usage
+
 getDataAsync();
 
 
