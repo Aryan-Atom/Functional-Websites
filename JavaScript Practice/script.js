@@ -173,14 +173,14 @@ Explanation:
  * Using axios for API calls
  ***********************/
 
-// For demo: https://jsonplaceholder.typicode.com/posts/1
-const axios = window.axios; // assuming axios is included via script tag
+
+const axios = window.axios;
 
 /* ---- CALLBACK STYLE ----
    Nested callbacks can become "callback hell".
 */
 function getDataWithCallback(callback) {
-  axios.get("https://jsonplaceholder.typicode.com/posts/1")
+  axios.get("...")
     .then(response => {
       callback(null, response.data);
     })
@@ -203,7 +203,7 @@ getDataWithCallback(function (err, data) {
    Cleaner than callbacks, avoids nesting.
 */
 function getDataWithPromise() {
-  return axios.get("https://jsonplaceholder.typicode.com/posts/1");
+  return axios.get("...");
 }
 
 // Usage
@@ -217,7 +217,7 @@ getDataWithPromise()
 */
 async function getDataAsync() {
   try {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
+    const res = await axios.get("...");
     console.log("Data (Async/Await):", res.data);
   } catch (err) {
     console.error("Error (Async/Await):", err);
