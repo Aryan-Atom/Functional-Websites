@@ -165,3 +165,71 @@ Explanation:
 - Use `details.target` to detect which child was clicked.
 - Saves memory and is scalable for dynamic child elements.
 */
+
+
+
+/***********************
+ * 7. Callback vs Promise vs Async/Await
+ * Using axios for API calls
+ ***********************/
+
+// For demo: https://jsonplaceholder.typicode.com/posts/1
+const axios = window.axios; // assuming axios is included via script tag
+
+/* ---- CALLBACK STYLE ----
+   Nested callbacks can become "callback hell".
+*/
+function getDataWithCallback(callback) {
+  axios.get("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => {
+      callback(null, response.data);
+    })
+    .catch(error => {
+      callback(error, null);
+    });
+}
+
+// Usage
+getDataWithCallback(function (err, data) {
+  if (err) {
+    console.error("Error (Callback):", err);
+  } else {
+    console.log("Data (Callback):", data);
+  }
+});
+
+
+/* ---- PROMISE STYLE ----
+   Cleaner than callbacks, avoids nesting.
+*/
+function getDataWithPromise() {
+  return axios.get("https://jsonplaceholder.typicode.com/posts/1");
+}
+
+// Usage
+getDataWithPromise()
+  .then(res => console.log("Data (Promise):", res.data))
+  .catch(err => console.error("Error (Promise):", err));
+
+
+/* ---- ASYNC/AWAIT STYLE ----
+   Looks synchronous, easier to read/maintain.
+*/
+async function getDataAsync() {
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
+    console.log("Data (Async/Await):", res.data);
+  } catch (err) {
+    console.error("Error (Async/Await):", err);
+  }
+}
+
+// Usage
+getDataAsync();
+
+
+/* NOTES:
+1. Callback: good for simple async tasks, but can get messy with multiple nested async calls.
+2. Promise: cleaner syntax, allows chaining (.then, .catch).
+3. Async/Await: syntactic sugar over promises; best readability and error handling with try...catch.
+*/
