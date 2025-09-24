@@ -235,3 +235,6 @@ getDataAsync();
 2. Promise: cleaner syntax, allows chaining (.then, .catch).
 3. Async/Await: syntactic sugar over promises; best readability and error handling with try...catch.
 */
+
+
+/* DOM Manupulation */
