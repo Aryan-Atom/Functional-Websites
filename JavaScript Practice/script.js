@@ -238,3 +238,25 @@ getDataAsync();
 
 
 /* DOM Manupulation */
+
+// Selection (Targetting the HTML Tag)
+
+// 1. Select ALL matching elements (static NodeList)
+document.querySelectorAll("selector");
+// Example: document.querySelectorAll(".btn");
+
+// 2. Select the FIRST matching element
+document.querySelector("selector");
+// Example: document.querySelector("#main h1");
+
+// 3. Select element by ID (only one, since IDs are unique)
+document.getElementById("id");
+// Example: document.getElementById("header");
+
+// 4. Select ALL elements with the same class name (live HTMLCollection)
+document.getElementsByClassName("className");
+// Example: document.getElementsByClassName("item");
+
+// 5. Select ALL elements with the same tag name (live HTMLCollection)
+document.getElementsByTagName("tagName");
+// Example: document.getElementsByTagName("div");
