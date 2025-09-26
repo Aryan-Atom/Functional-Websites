@@ -260,3 +260,100 @@ document.getElementsByClassName("className");
 // 5. Select ALL elements with the same tag name (live HTMLCollection)
 document.getElementsByTagName("tagName");
 // Example: document.getElementsByTagName("div");
+
+
+
+
+// Methods of Manipulating Data
+// 1. Change inner HTML content
+element.innerHTML = "New Content";
+// Example: document.querySelector("#header").innerHTML = "<h1>Welcome</h1>"; 
+// 2. Change text content (no HTML parsing)
+element.textContent = "New Text"; 
+// Example: document.querySelector("#header").textContent = "Welcome";
+
+// 3. Change CSS styles
+element.style.property = "value"; 
+// Example: document.querySelector("#header").style.color = "blue"; 
+
+// 4. Add or remove CSS classes
+element.classList.add("newClass"); 
+element.classList.remove("oldClass"); 
+// Example: document.querySelector("#header").classList.add("highlight");
+
+// 5. Set or get attributes
+element.setAttribute("attr", "value"); 
+let attrValue = element.getAttribute("attr"); 
+// Example: document.querySelector("#link").setAttribute("href", "https://example.com");  
+// Example: let href = document.querySelector("#link").getAttribute("href");
+
+// 6. Create new elements
+let newElem = document.createElement("div"); 
+// Example: let newDiv = document.createElement("div"); 
+newElem.textContent = "Hello World";
+document.body.appendChild(newElem);
+// Example: document.body.appendChild(newDiv);
+
+// 7. Remove elements
+element.remove(); 
+// Example: document.querySelector("#oldElement").remove(); 
+
+// 8. Event Listeners
+element.addEventListener("event", function() { 
+  // event handler code 
+});
+// Example: document.querySelector("#btn").addEventListener("click", function() { alert("Clicked!"); });
+
+// 9. Traversing the DOM
+let parentElem = element.parentNode; 
+let children = element.childNodes; 
+let nextSibling = element.nextSibling; 
+let previousSibling = element.previousSibling; 
+// Example: let parentDiv = document.querySelector("#child").parentNode;  
+
+// 10. Form Manipulation
+let formValue = document.querySelector("#myForm input").value; 
+document.querySelector("#myForm input").value = "New Value"; 
+// Example: let username = document.querySelector("#loginForm input[name='username']").value;
+
+// 11. Local Storage
+localStorage.setItem("key", "value"); 
+let storedValue = localStorage.getItem("key"); 
+localStorage.removeItem("key"); 
+// Example: localStorage.setItem("theme", "dark");  
+// Example: let theme = localStorage.getItem("theme");
+
+// 12. Session Storage
+sessionStorage.setItem("key", "value"); 
+let sessionValue = sessionStorage.getItem("key"); 
+sessionStorage.removeItem("key"); 
+// Example: sessionStorage.setItem("sessionID", "12345");  
+// Example: let sessionID = sessionStorage.getItem("sessionID");  
+
+// 13. JSON Manipulation
+let jsonString = JSON.stringify({ name: "Atom", age: 23 }); 
+let jsonObj = JSON.parse(jsonString); 
+// Example: let userJson = JSON.stringify({ username: "atom", loggedIn: true });  
+// Example: let userObj = JSON.parse(userJson); 
+
+// 14. Cookies
+document.cookie = "username=Atom; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/"; 
+let cookies = document.cookie; 
+// Example: document.cookie = "sessionToken=abc123; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";  
+// Example: let allCookies = document.cookie; 
+
+
+// 15. Window Manipulation 
+window.open("https://example.com", "_blank");
+window.close();
+window.scrollTo(0, 100); // Scroll to 100px from top
+// Example: window.open("https://example.com", "_blank");  
+// Example: window.scrollTo(0, 500); // Scroll to 500px from top
+// Example: window.close(); // Close current window (if opened via script)
+
+
+
+
+
+
+
