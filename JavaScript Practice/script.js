@@ -352,6 +352,8 @@ window.scrollTo(0, 100); // Scroll to 100px from top
 // Example: window.close(); // Close current window (if opened via script)
 
 
+//Cookies are good for remembering simple preferences or identifiers.
+//Sessions are better for storing secure, sensitive, or temporary information.
 
 
 
