@@ -54,25 +54,46 @@
 
 // Task 4 -- Add Remove List items
 
-let inp = document.querySelector("#inp");
+// let inp = document.querySelector("#inp");
 
-let add = document.querySelector("#add");
-let remove = document.querySelector("#remove");
+// let add = document.querySelector("#add");
+// let remove = document.querySelector("#remove");
 
-let ul = document.querySelector("ul");
+// let ul = document.querySelector("ul");
 
-let li;
+// let li;
 
-add.addEventListener("click", function (e) {
-  if (inp.value === "") {
-  } else {
-    li = document.createElement("li");
-    li.textContent = inp.value;
-    ul.appendChild(li);
-    inp.value="";
-  }
-});
+// add.addEventListener("click", function (e) {
+//   if (inp.value === "") {
+//   } else {
+//     li = document.createElement("li");
+//     li.textContent = inp.value;
+//     ul.appendChild(li);
+//     inp.value="";
+//   }
+// });
 
-remove.addEventListener("click", function (e) {
-  ul.removeChild(li)
-});
+// remove.addEventListener("click", function (e) {
+//   ul.removeChild(li)
+// });
+
+
+
+let h3 = document.querySelector("h3");
+let start = document.querySelector("#start");
+let Stop = document.querySelector("#stop");
+
+let dig;
+
+start.addEventListener("click" , function(){
+let count = 0;
+dig =  setInterval(function(){
+    h3.textContent = count;
+    count++;
+},1000)
+})
+
+Stop.addEventListener("click" ,  function(){
+    clearInterval(dig);
+})
+
