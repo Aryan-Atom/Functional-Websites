@@ -6,13 +6,10 @@
 //     para.textContent =  "Starting..."
 // })
 
-
-
 // Task 2 - Swap image
 
 // let img1 = document.querySelector("#img1");
 // let img2 = document.querySelector("#img2");
-
 
 // let btn = document.querySelector("button");
 
@@ -26,33 +23,56 @@
 
 // })
 
-
 // Task-3 - Validation Check on Form Submit
 
 // let inp1 = document.querySelector("#inp1");
 // let inp2 = document.querySelector("#inp2");
 
-let inps = document.querySelectorAll('input[type="text"]');
-let form = document.querySelector("form");
-let h3 = document.querySelector("h3");
+// let inps = document.querySelectorAll('input[type="text"]');
+// let form = document.querySelector("form");
+// let h3 = document.querySelector("h3");
 
-form.addEventListener("submit" , function(ev){
+// form.addEventListener("submit" , function(ev){
 
- ev.preventDefault();
+//  ev.preventDefault();
 
+//  for(let i = 0 ; i < inps.length ; i++ ){
 
- for(let i = 0 ; i < inps.length ; i++ ){
-
-    if(inps[i].value === ""){
-        h3.textContent="Error";
-        break;
-    }
-    else{
-        h3.textContent="ok";
-    }
- }
+//     if(inps[i].value === ""){
+//         h3.textContent="Error";
+//         break;
+//     }
+//     else{
+//         h3.textContent="ok";
+//     }
+//  }
 
 //  if(inp1.value === '' || inp2.value === ''){
 //     alert("Fill the fields")
 //  }
-})
+// })
+
+// Task 4 -- Add Remove List items
+
+let inp = document.querySelector("#inp");
+
+let add = document.querySelector("#add");
+let remove = document.querySelector("#remove");
+
+let ul = document.querySelector("ul");
+
+let li;
+
+add.addEventListener("click", function (e) {
+  if (inp.value === "") {
+  } else {
+    li = document.createElement("li");
+    li.textContent = inp.value;
+    ul.appendChild(li);
+    inp.value="";
+  }
+});
+
+remove.addEventListener("click", function (e) {
+  ul.removeChild(li)
+});
