@@ -99,20 +99,35 @@
 
 // Task-6 -> tab change display
 
-let divs = document.querySelectorAll(".tab");
-let texts = document.querySelectorAll("h3");
+// let divs = document.querySelectorAll(".tab");
+// let texts = document.querySelectorAll("h3");
 
-texts[0].style.display = "block";
+// texts[0].style.display = "block";
 
-divs.forEach(function (div, indx) {
-  div.addEventListener("click", function () {
-    hideAllText();
-    texts[indx].style.display = "block";
-  });
-});
+// divs.forEach(function (div, indx) {
+//   div.addEventListener("click", function () {
+//     hideAllText();
+//     texts[indx].style.display = "block";
+//   });
+// });
 
-function hideAllText() {
-  texts.forEach((text) => {
-    text.style.display = "none";
-  });
-}
+// function hideAllText() {
+//   texts.forEach((text) => {
+//     text.style.display = "none";
+//   });
+// }
+
+// Task 7 -> Progress Bar
+
+let prog = document.querySelector("#progress");
+let h3 = document.querySelector("h3");
+
+let count = 0;
+let int = setInterval(function () {
+  if (count === 100) {
+    h3.style.opacity= 1;
+    clearInterval(int);
+  }
+  count++;
+  prog.style.width = count + "%";
+}, 100);
