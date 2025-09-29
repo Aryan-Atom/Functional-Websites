@@ -77,23 +77,42 @@
 //   ul.removeChild(li)
 // });
 
+//Task - 5 -> Timer
 
+// let h3 = document.querySelector("h3");
+// let start = document.querySelector("#start");
+// let Stop = document.querySelector("#stop");
 
-let h3 = document.querySelector("h3");
-let start = document.querySelector("#start");
-let Stop = document.querySelector("#stop");
+// let dig;
 
-let dig;
+// start.addEventListener("click" , function(){
+// let count = 0;
+// dig =  setInterval(function(){
+//     h3.textContent = count;
+//     count++;
+// },1000)
+// })
 
-start.addEventListener("click" , function(){
-let count = 0;
-dig =  setInterval(function(){
-    h3.textContent = count;
-    count++;
-},1000)
-})
+// Stop.addEventListener("click" ,  function(){
+//     clearInterval(dig);
+// })
 
-Stop.addEventListener("click" ,  function(){
-    clearInterval(dig);
-})
+// Task-6 -> tab change display
 
+let divs = document.querySelectorAll(".tab");
+let texts = document.querySelectorAll("h3");
+
+texts[0].style.display = "block";
+
+divs.forEach(function (div, indx) {
+  div.addEventListener("click", function () {
+    hideAllText();
+    texts[indx].style.display = "block";
+  });
+});
+
+function hideAllText() {
+  texts.forEach((text) => {
+    text.style.display = "none";
+  });
+}
