@@ -131,3 +131,100 @@
 //   count++;
 //   prog.style.width = count + "%";
 // }, 100);
+
+
+// Task - 8  input search
+
+const data = [
+  {
+    name: "Liam",
+    src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "Zara",
+    src: "https://images.unsplash.com/photo-1603415526960-f7e0328f45ff?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Ethan",
+    src: "https://images.unsplash.com/photo-1531891437562-2a6e6b5d6c30?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Maya",
+    src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Noah",
+    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Luna",
+    src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Aiden",
+    src: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Chloe",
+    src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Leo",
+    src: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+  {
+    name: "Sofia",
+    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.0.3"
+  }
+];
+
+
+
+
+let input = document.querySelector("input");
+let userList = document.querySelector(".total-users")
+
+
+
+var pers ="";
+data.forEach( function(elem){
+
+  pers += `<div class="user">
+          <div class="img">
+            <img
+              src= ${elem.src}
+              alt=""
+            />
+          </div>
+          <div class="name">${elem.name}</div>
+        </div>`
+})
+
+
+userList.innerHTML = pers;
+
+
+input.addEventListener("input" ,function(){
+  let match = data.filter(function(elem){
+ return elem.name.toLowerCase().startsWith(input.value.toLowerCase());
+  })
+
+  let newUsers=""
+  match.forEach( function(elem){
+
+  newUsers += `<div class="user">
+          <div class="img">
+            <img
+              src= ${elem.src}
+              alt=""
+            />
+          </div>
+          <div class="name">${elem.name}</div>
+        </div>`
+})
+userList.innerHTML = newUsers;
+
+})
+
+
+
