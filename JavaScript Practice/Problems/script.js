@@ -210,7 +210,7 @@ input.addEventListener("input" ,function(){
   })
 
   let newUsers=""
-  match.forEach( function(elem){
+  match.forEach(function(elem){
 
   newUsers += `<div class="user">
           <div class="img">
