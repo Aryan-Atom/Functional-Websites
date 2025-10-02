@@ -55,50 +55,73 @@ h3 {
   position: absolute;
 } */
 
+/* .container {
+  padding: 10vw 17vw 0px 17vw;
+  }
+  input {
+    width: 100%;
+    padding: 12px 22px;
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 1px solid #dadada;
+    outline-color: royalblue;
+    }
+    .total-users {
+      height: 100%;
+      padding: 10px 20vw;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .user {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+    .img {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    .img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    } */
+body {
+  margin: 0;
+  padding: 0;
+}
 #main {
   width: 100%;
   height: 100%;
   font-family: "Poppins Regular";
+  padding: 0;
 }
-.container {
-  padding: 10vw 17vw 0px 17vw;
-}
-input {
+
+#progress {
+  top: 0;
+  height: 5px;
   width: 100%;
-  padding: 12px 22px;
-  font-size: 30px;
-  font-weight: 500;
-  border-radius: 20px;
-  border: 1px solid #dadada;
-  outline-color: royalblue;
+  position: fixed;
+  background-color: #333;
+  /* border-radius: 20px; */
 }
-.total-users {
-  height: 100%;
-  /* background-color: red; */
-  padding: 10px 20vw;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+
+#scrolled {
+  height: 5px;
+  width: 0%;
+  background-color: rgb(91, 148, 255);
+  /* border-radius: 20px; */
 }
-.user {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  /* background-color: aqua; */
-}
-.img {
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+#page {
+  height: 500vh;
+  background-color: #444;
 }
