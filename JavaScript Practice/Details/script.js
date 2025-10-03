@@ -356,6 +356,8 @@ window.scrollTo(0, 100); // Scroll to 100px from top
 //Sessions are better for storing secure, sensitive, or temporary information.
 
 
+// Null Checks
 
+// obj?.age => provides null check
 
 
