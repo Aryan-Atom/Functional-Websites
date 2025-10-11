@@ -1,23 +1,24 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #fff;
-    font-family: "Poppins Regular";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Poppins Regular";
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
-#main{
-    width: 100%;
-    height: 100%;
-    background-color: #222;
+#main {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
 }
 
-#nav{
+/* #nav{
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -59,7 +60,6 @@ html, body{
     height: 600px;
     top: 15%;
     left: 40%;
-    /* transform: translate(-50% , -50%); */
     border-radius: 12px;
 }
 
@@ -69,4 +69,36 @@ html, body{
 
 #img2{
     rotate: 10deg;
+} */
+
+#page1 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(172, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page2 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 243, 172);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page3 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 196, 172);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: linear-gradient(rgb(255, 159, 159), rgb(146, 146, 255));
 }

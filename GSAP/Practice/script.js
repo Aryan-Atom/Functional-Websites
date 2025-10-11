@@ -18,8 +18,6 @@
 
 //Final -> Initial from
 
-
-
 // Use of Timeline
 
 //  const tl =  gsap.timeline();
@@ -42,31 +40,49 @@
 //     duration:3,
 //  })
 
-
 // #Test site -1
 
+// let tl = gsap.timeline()
 
-let tl = gsap.timeline()
+// tl.from("#nav h3" ,{
+//     y: -50,
+//     opacity:0,
+//     delay:0.25,
+//     duration:0.5,
+//     stagger:0.1
+// })
 
-tl.from("#nav h3" ,{
-    y: -50,
-    opacity:0,
-    delay:0.25,
-    duration:0.5,
-    stagger:0.1
-})
+// tl.from("#main h1" ,{
+//     x: -100,
+//     opacity:0,
+//  stagger:0.2,
+//  duration:0.5,
+// })
 
-tl.from("#main h1" ,{
-    x: -100,
-    opacity:0,
- stagger:0.2,   
- duration:0.5,
-})
+// tl.from("#main img",{
+//     rotate: 30,
+//     x:150,
+//     opacity:0,
+//     stagger:0.5,
+//     duration:0.5
+// })
 
-tl.from("#main img",{
-    rotate: 30,
-    x:150,
-    opacity:0,
-    stagger:0.5,
-    duration:0.5
-})
+let tl = gsap.timeline();
+
+gsap.from("#page1 .circle", {
+  rotate: 720,
+  scale: 0,
+  duration: 2,
+});
+
+gsap.from("#page2 .circle", {
+  rotate: 720,
+  scale: 0,
+  duration: 2,
+  scrollTrigger: {
+    trigger: "#page2 .circle",
+    markers: true,
+    start: "top 120%",
+    scrub:1
+  },
+});
