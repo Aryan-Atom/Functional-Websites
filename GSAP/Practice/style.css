@@ -10,6 +10,10 @@ html,
 body {
   height: 100%;
   width: 100%;
+
+}
+body{
+    overflow-x: hidden;
 }
 
 #main {
@@ -84,7 +88,6 @@ body {
   height: 100%;
   background-color: rgb(255, 243, 172);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 #page3 {
@@ -96,9 +99,20 @@ body {
   align-items: center;
 }
 
-.circle {
+/* .circle {
   width: 500px;
   height: 500px;
   border-radius: 50%;
   background: linear-gradient(rgb(255, 159, 159), rgb(146, 146, 255));
+} */
+
+
+#page2 img{
+    height: 100%;
+    width: 20%;
+    object-fit: cover;
+}
+
+#page2 h1{
+    font-size: 45vw;
 }

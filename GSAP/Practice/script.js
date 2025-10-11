@@ -67,22 +67,37 @@
 //     duration:0.5
 // })
 
-let tl = gsap.timeline();
+//  Scroll Trigger
 
-gsap.from("#page1 .circle", {
-  rotate: 720,
-  scale: 0,
-  duration: 2,
-});
+// let tl = gsap.timeline();
 
-gsap.from("#page2 .circle", {
-  rotate: 720,
-  scale: 0,
-  duration: 2,
+// gsap.from("#page1 .circle", {
+//   rotate: 720,
+//   scale: 0,
+//   duration: 2,
+// });
+
+// gsap.from("#page2 .circle", {
+//   rotate: 720,
+//   scale: 0,
+//   duration: 2,
+//   scrollTrigger: {
+//     trigger: "#page2 .circle",
+//     markers: true,
+//     start: "top 120%",
+//     scrub: 1,
+//   },
+// });
+
+gsap.to("#page2 h1", {
+  transform: "translateX(-80%)",
   scrollTrigger: {
-    trigger: "#page2 .circle",
+    trigger: "#page2",
+    scroller: "body",
     markers: true,
-    start: "top 120%",
-    scrub:1
+    start: "top 0",
+    end: "top -100%",
+    scrub: 5,
+    pin:true,
   },
 });
