@@ -45,3 +45,15 @@ const loadingAnimation = () => {
   });
 };
 loadingAnimation();
+
+const cursorAnimation = () => {
+  document.addEventListener("mousemove", function (coOrds) {
+    gsap.to("#cursor", {
+      top: coOrds.y,
+      left: coOrds.x,
+    });
+  });
+
+  Shery.makeMagnet("#menu-items h4");
+};
+cursorAnimation();

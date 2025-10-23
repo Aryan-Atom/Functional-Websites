@@ -10,6 +10,19 @@ html,
 body {
   width: 100%;
   height: 100%;
+  cursor: none;
+}
+
+#cursor {
+  position: fixed;
+  width: 2vw;
+  height: 2vw;
+  /* background-color: rgb(211, 211, 211); */
+  z-index: 99999;
+  border-radius: 50%;
+  border: 1px solid rgb(211, 211, 211);
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
 }
 
 #loader {
@@ -68,7 +81,20 @@ body {
 #page-1 {
   height: 100vh;
   width: 100%;
-  background-color: #333;
+  background-color: #222;
+}
+#nav {
+  /* background-color: red; */
+  width: 100%;
+  padding: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#menu-items {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
 }
 
 @keyframes textAnimation {
