@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Poppins Regular";
 }
 
 html,
@@ -16,7 +18,36 @@ body {
   position: fixed;
   z-index: 999;
   background-color: #0b0b0b;
+  text-transform: uppercase;
+  padding: 10vw;
 }
+#loader-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8vw;
+}
+#loader-progress h5,
+#loader-progress h6 {
+  font-size: 2vw;
+  font-style: italic;
+  width: 100px;
+}
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+  overflow: hidden;
+  gap: 2vw;
+}
+.line h1 {
+  font-size: 6vw;
+}
+.line h2 {
+  font-size: 6vw;
+}
+
 #main {
   position: relative;
   background-color: #333;
