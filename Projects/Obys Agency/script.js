@@ -48,7 +48,7 @@ loadingAnimation();
 
 const cursorAnimation = () => {
   document.addEventListener("mousemove", function (coOrds) {
-    gsap.to("#cursor", {
+    gsap.to("#cursor ", {
       top: coOrds.y,
       left: coOrds.x,
     });
@@ -57,3 +57,32 @@ const cursorAnimation = () => {
   Shery.makeMagnet("#menu-items h4");
 };
 cursorAnimation();
+
+const videoCursorAnim = () => {
+  const videoContainer = document.querySelector("#video-container");
+
+  const thumbnail = document.querySelector("#thumbnail");
+
+ videoContainer.addEventListener("click", () => {
+  if (thumbnail.style.opacity === "0" || thumbnail.style.opacity === "") {
+    thumbnail.style.opacity = "1";
+  } else {
+    thumbnail.style.opacity = "0";
+  }
+});
+
+  videoContainer.addEventListener("mousemove", (e) => {
+    const rect = videoContainer.getBoundingClientRect();
+
+    // Calculate position relative to the container
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    gsap.to("#video-cursor", {
+      top: y,
+      left: x,
+    });
+  });
+};
+
+videoCursorAnim();
