@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
   </head>
   <body>
     <div id="cursor"></div>
@@ -84,8 +88,11 @@
         <div class="hero">
           <h1>Unique</h1>
         </div>
-        <div class="hero">
-          <h1>Web/Graphics</h1>
+        <div class="hero" id="hero-work">
+          <h1>
+            <span>Web</span><span>/</span><span>Graphics</span
+            ><span id="hoverEl"></span>
+          </h1>
         </div>
         <div class="hero">
           <h1>Experience</h1>
@@ -93,12 +100,13 @@
       </div>
       <div id="page-2">
         <div id="video-container">
-          <div id="video-cursor"></div>
-          <img src="img.jpg" alt="thumbnail" id="thumbnail"/>
+          <div id="video-cursor"><i class="ri-play-fill"></i></div>
+          <img src="img.jpg" alt="thumbnail" id="thumbnail" />
           <video autoplay muted loop src="video.mp4"></video>
         </div>
       </div>
       <div id="page-3"></div>
+      <div id="page-4"></div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"

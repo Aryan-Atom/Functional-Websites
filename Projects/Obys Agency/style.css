@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #ffffff;
+
   font-family: "Poppins Regular";
 }
 
@@ -11,6 +11,7 @@ body {
   width: 100%;
   height: 100%;
   /* cursor: none; */
+  color: #ffffff;
 }
 
 #cursor {
@@ -23,6 +24,7 @@ body {
   border: 1px solid rgb(211, 211, 211);
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 #loader {
@@ -100,18 +102,48 @@ body {
 .hero {
   width: 70%;
   margin-left: 30%;
+  position: relative;
+  z-index: 3;
 }
 
 .hero h1 {
   font-size: 6vw;
   text-transform: uppercase;
   line-height: 7.5vw;
+  position: relative;
+  z-index: 3;
 }
 
 .hero:nth-child(2) {
   margin-top: 12vh;
 }
 
+#hero-work span:nth-child(2n + 1) {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  color: white;
+  -webkit-text-stroke: 0px transparent;
+      box-shadow: inset 0px -7px 0px 0px white
+}
+
+#hero-work span:nth-child(2n + 1):hover {
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  box-shadow: none;
+}
+
+#hoverEl {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1664403489326-0591c36be436?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735");
+  transform: translate(-50%, -50%);
+  top: 50%;
+  z-index: 1;
+  opacity: 0;
+}
 /* Page-2 */
 
 #page-2 {
@@ -129,7 +161,7 @@ body {
   height: 85%;
   background-color: white;
 }
-#video-container img {
+#thumbnail {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -148,11 +180,23 @@ body {
 #video-cursor {
   position: absolute;
   z-index: 3;
-  height: 100px;
-  width: 100px;
+  height: 7vw;
+  width: 7vw;
   background-color: orange;
   border-radius: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw;
+  pointer-events: none;
+}
+
+
+#page-3{
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(37, 37, 37);
 }
 
 @keyframes textAnimation {
