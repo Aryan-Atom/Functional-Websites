@@ -396,9 +396,19 @@ body {
 }
 .item-header {
   font-size: 24px;
+  transform: translateY(0%);
+  transition: transform 1s ease;
 }
-.footer-stamp {
+
+.header-hover-container:hover .item-header {
+  transform: translateY(-50%);
 }
+
+.header-hover-container {
+  height: 35px;
+  overflow: hidden;
+}
+
 
 .stamp-top .underline {
   margin-bottom: 2vw;
