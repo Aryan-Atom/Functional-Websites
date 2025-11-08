@@ -286,7 +286,7 @@ body {
   display: inline-block;
   /* background-color: red; */
   animation-name: carouselAnim;
-  animation-duration: 5s;
+  animation-duration: 14s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   margin-right: 16px;
@@ -300,7 +300,7 @@ body {
   display: inline-block;
   /* background-color: red; */
   animation-name: carouselAnim;
-  animation-duration: 5s;
+  animation-duration: 14s;
   animation-timing-function: linear;
   animation-direction: reverse;
   animation-iteration-count: infinite;
@@ -412,4 +412,14 @@ body {
 
 .stamp-top .underline {
   margin-bottom: 2vw;
+}
+
+.footer-title h1{
+  transition: all 2s ease-in-out;
+  font-style: normal;
+}
+.footer-title:hover h1{
+  -webkit-text-stroke:1px white;
+  color: transparent;
+  font-style: italic;
 }
