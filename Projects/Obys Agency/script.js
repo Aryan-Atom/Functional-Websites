@@ -81,6 +81,11 @@ const loadingAnimation = () => {
     opacity: 0,
     ease: Power4,
   });
+  tl.from(".hero h1", {
+    y: 150,
+    stagger: 0.2,
+  },"-=0.2");
+
   tl.to("#loader", {
     display: "none",
   });
@@ -152,3 +157,11 @@ videoCursorAnim();
 //   })
 // };
 // hoverWorkAnimation();
+
+
+Shery.imageEffect(".img-container img", {
+  style: 2, //Select Style
+  debug: true, // Debug Panel
+  config: {
+  },
+});
