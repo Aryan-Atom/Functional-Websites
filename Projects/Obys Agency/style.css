@@ -223,6 +223,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  opacity: 1;
 }
 #page-4 {
   min-height: 100vh;
@@ -448,4 +449,8 @@ body {
   -webkit-text-stroke:1px white;
   color: transparent;
   font-style: italic;
+}
+
+._canvas_container{
+  z-index: 999999 !important;
 }
