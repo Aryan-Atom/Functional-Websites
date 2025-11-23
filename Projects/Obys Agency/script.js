@@ -81,10 +81,14 @@ const loadingAnimation = () => {
     opacity: 0,
     ease: Power4,
   });
-  tl.from(".hero h1", {
-    y: 150,
-    stagger: 0.2,
-  },"-=0.2");
+  tl.from(
+    ".hero h1",
+    {
+      y: 150,
+      stagger: 0.2,
+    },
+    "-=0.2"
+  );
 
   tl.to("#loader", {
     display: "none",
@@ -138,30 +142,59 @@ const videoCursorAnim = () => {
 
 videoCursorAnim();
 
-// const hoverWorkAnimation = () => {
-//   const container = document.querySelector("#hero-work");
-//   const hoverDiv = document.querySelector("#hoverEl");
+const hoverWorkAnimation = () => {
+  const container = document.querySelector("#hero-work");
+  const hoverDiv = document.querySelector("#hoverEl");
 
-//   container.addEventListener("mousemove", (dets) => {
-//     console.log("click")
-//     const rect = container.getBoundingClientRect();
+  container.addEventListener("mousemove", (dets) => {
+    console.log("click")
+    const rect = container.getBoundingClientRect();
 
-//     const x = dets.clientX - rect.left;
+    const x = dets.clientX - rect.left;
 
-//     hoverEl.style.opacity = 1;
-//     hoverEl.style.left = `${x}px`;
-//   });
+    hoverEl.style.opacity = 1;
+    hoverEl.style.left = `${x}px`;
+  });
 
-//   container.addEventListener("mouseleave",(e)=>{
-//  hoverEl.style.opacity = 0;
-//   })
-// };
-// hoverWorkAnimation();
-
+  container.addEventListener("mouseleave",(e)=>{
+ hoverEl.style.opacity = 0;
+  })
+};
+hoverWorkAnimation();
 
 Shery.imageEffect(".img-container", {
   style: 5, //Select Style
-  // debug: true, // Debug 
-  gooey:true,
-  config: {"a":{"value":2,"range":[0,30]},"b":{"value":-0.98,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.6666666666666666},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.43,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.38,"range":[0,10]},"metaball":{"value":0.46,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.44,"range":[0,2]},"noise_scale":{"value":8.4,"range":[0,100]}},
+  // debug: true, // Debug
+  gooey: true,
+  config: {
+    a: { value: 2, range: [0, 30] },
+    b: { value: -0.98, range: [-1, 1] },
+    zindex: { value: -9996999, range: [-9999999, 9999999] },
+    aspect: { value: 0.6666666666666666 },
+    ignoreShapeAspect: { value: true },
+    shapePosition: { value: { x: 0, y: 0 } },
+    shapeScale: { value: { x: 0.5, y: 0.5 } },
+    shapeEdgeSoftness: { value: 0, range: [0, 0.5] },
+    shapeRadius: { value: 0, range: [0, 2] },
+    currentScroll: { value: 0 },
+    scrollLerp: { value: 0.07 },
+    gooey: { value: true },
+    infiniteGooey: { value: false },
+    growSize: { value: 4, range: [1, 15] },
+    durationOut: { value: 1, range: [0.1, 5] },
+    durationIn: { value: 1.5, range: [0.1, 5] },
+    displaceAmount: { value: 0.5 },
+    masker: { value: true },
+    maskVal: { value: 1.43, range: [1, 5] },
+    scrollType: { value: 0 },
+    geoVertex: { range: [1, 64], value: 1 },
+    noEffectGooey: { value: true },
+    onMouse: { value: 0 },
+    noise_speed: { value: 0.38, range: [0, 10] },
+    metaball: { value: 0.46, range: [0, 2] },
+    discard_threshold: { value: 0.5, range: [0, 1] },
+    antialias_threshold: { value: 0, range: [0, 0.1] },
+    noise_height: { value: 0.44, range: [0, 2] },
+    noise_scale: { value: 8.4, range: [0, 100] },
+  },
 });

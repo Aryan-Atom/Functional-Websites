@@ -214,8 +214,8 @@ body {
    border-bottom: 1px solid white;
 }
 .img-container{
-  width: 20vw;
-  height: 30vw;
+  width: 25vw;
+  height: 40vw;
   position: relative;
 }
 
@@ -453,4 +453,14 @@ body {
 
 ._canvas_container{
   z-index: 999999 !important;
+}
+
+.wrapper-image-class{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5vw;
+  gap: 7vw;
+}
+.img-container:nth-child(2n){
+ margin-top: 10vw;
 }
