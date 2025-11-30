@@ -1,17 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Form = () => {
+const Form = ({ handleSubmitInfo }) => {
   const { register, handleSubmit } = useForm();
   return (
     <div className="p-8">
-      <form action="" className="flex justify-between">
+      <form
+        action=""
+        className="flex justify-between"
+        onSubmit={handleSubmit((data) => handleSubmitInfo(data))}
+      >
         <input
+          {...register("name")}
           type="text"
           placeholder="name"
           className="p-2 w-[500px] rounded-full px-4 bg-zinc-800 text-white"
         />
         <input
+          {...register("image")}
           type="text"
           placeholder="image"
           className="p-2 w-[500px] rounded-full px-4 bg-zinc-800 text-white"
