@@ -24,7 +24,7 @@ const Form = ({ handleSubmitInfo }) => {
         />
         <input
           type="submit"
-          className="p-2 bg-blue-500 px-8 font-semibold text-white rounded-full"
+          className="p-2 bg-blue-500 px-8 font-semibold text-white rounded-full cursor-pointer"
         />
       </form>
     </div>
