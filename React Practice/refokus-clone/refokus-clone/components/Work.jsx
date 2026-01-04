@@ -34,7 +34,7 @@ const Work = () => {
     },
   ];
   return (
-    <div className="w-full ">
+    <div className="w-full mb-24">
       <div className="relative max-w-screen-xl mx-auto text-center">
         <h1 className="text-[30vw] leading-none tracking-tight select-none">
           work
