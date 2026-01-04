@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-6 flex items-center gap-3 justify-between border-b border-zinc-700">
       <div className="nleft flex">
-        <div className="flex w-20 items-center gap-3">
+        <div className="flex w-20 items-center gap-3 cursor-pointer">
           <span className="inline-block">
             <svg
               width="100%"
