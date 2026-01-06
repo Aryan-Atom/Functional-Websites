@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 
 const Work = () => {
-  const images = [
+  const [images, setImages] = useState([
     {
       url: "https://images.unsplash.com/photo-1634655685926-944d0254af90?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       top: "50%",
@@ -32,7 +33,43 @@ const Work = () => {
       left: "53%",
       isActive: false,
     },
-  ];
+  ]);
+
+  const { scrollYProgress } = useScroll();
+
+  const imagesShow = (arr) => {
+    setImages((prev) =>
+      prev.map((item, index) =>
+        arr.indexOf(index) === -1
+          ? { ...item, isActive: false }
+          : { ...item, isActive: true }
+      )
+    );
+  };
+  scrollYProgress.on("change", (data) => {
+    switch (Math.floor(data * 100)) {
+      case 0:
+        imagesShow([]);
+        console.log("0");
+        break;
+      case 1:
+        imagesShow([0]);
+        break;
+      case 3:
+        imagesShow([0, 1]);
+        break;
+      case 5:
+        imagesShow([0, 1, 2]);
+        break;
+      case 6:
+        imagesShow([0, 1, 2]);
+        break;
+      case 7:
+        imagesShow([0, 1, 2, 3]);
+        break;
+    }
+  });
+
   return (
     <div className="w-full mb-24">
       <div className="relative max-w-screen-xl mx-auto text-center">
