@@ -1,9 +1,12 @@
 import React from "react";
 import StyledButton from "./StyledButton";
 
-const Product = ({ info }) => {
+const Product = ({ info, handleProjectHover, index }) => {
   return (
-    <div className="w-full py-20 text-white">
+    <div
+      className="w-full py-20 h-[23rem]  text-white"
+      onMouseEnter={() => handleProjectHover(index)}
+    >
       <div className="max-w-screen-xl  mx-auto flex items-center justify-between">
         <div className="product-title text-6xl capitalize font-medium">
           {info.title}

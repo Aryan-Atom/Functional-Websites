@@ -11,19 +11,19 @@ const Work = () => {
     },
     {
       url: "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=836&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      top: "53%",
+      top: "56%",
       left: "45%",
       isActive: false,
     },
     {
       url: "https://plus.unsplash.com/premium_photo-1682124690265-f9135fbe81bc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       top: "60%",
-      left: "52%",
+      left: "62%",
       isActive: false,
     },
     {
       url: "https://plus.unsplash.com/premium_photo-1682124865982-86f0aa859b01?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      top: "59%",
+      top: "79%",
       left: "49%",
       isActive: false,
     },
@@ -50,7 +50,6 @@ const Work = () => {
     switch (Math.floor(data * 100)) {
       case 0:
         imagesShow([]);
-        console.log("0");
         break;
       case 1:
         imagesShow([0]);
@@ -66,6 +65,9 @@ const Work = () => {
         break;
       case 7:
         imagesShow([0, 1, 2, 3]);
+        break;
+      case 8:
+        imagesShow([0, 1, 2, 3, 4]);
         break;
     }
   });
