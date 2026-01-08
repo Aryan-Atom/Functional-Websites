@@ -1,12 +1,15 @@
+import { motion } from "motion/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Card = ({ width, headerMain, footerInfo, hoverColor = false }) => {
   return (
-    <div
-      className={`${width} bg-zinc-800 p-5 rounded-xl min-h-96 ${
-        hoverColor && "hover:bg-violet-600"
-      }`}
+    <motion.div
+      whileHover={{
+        backgroundColor: hoverColor && "#7443ff",
+        paddingLeft: "32px",
+      }}
+      className={`${width} bg-zinc-800 p-5 rounded-xl min-h-96`}
     >
       <div className="flex flex-col justify-between h-full">
         <div className="top-items-card">
@@ -37,7 +40,7 @@ const Card = ({ width, headerMain, footerInfo, hoverColor = false }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
