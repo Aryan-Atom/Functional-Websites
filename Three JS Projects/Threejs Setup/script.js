@@ -13,7 +13,7 @@ const camera = new THREE.PerspectiveCamera(
 
 // -------------------- Geometry / Object -----------------
 
-const geometry = new THREE.CylinderGeometry(2, 2, 2);
+const geometry = new THREE.SphereGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({
   color: "yellow",
   wireframe: true,
