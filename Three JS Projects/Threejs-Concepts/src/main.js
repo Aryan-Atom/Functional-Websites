@@ -25,8 +25,13 @@ const material2 = new Three.MeshBasicMaterial({
 
 const cube2 = new Three.Mesh(geometry2, material2);
 
-scene.add(cube);
-scene.add(cube2);
+const group = new Three.Group();
+
+group.add(cube);
+group.add(cube2);
+
+// group.position.x = -1;
+scene.add(group);
 
 camera.position.z = 5;
 
