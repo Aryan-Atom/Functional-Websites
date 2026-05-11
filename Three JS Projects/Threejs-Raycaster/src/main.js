@@ -22,6 +22,7 @@ const canvas = document.querySelector("canvas");
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+          
 const cubeGeometry = new THREE.BoxGeometry();
 const cubeMaterial = new THREE.MeshPhysicalMaterial({
   color: 0x00ff00,
@@ -49,7 +50,8 @@ scene.add(sphere);
 camera.position.z = 5;
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
+controls.enableDamping = true;  
+
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
