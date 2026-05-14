@@ -5,7 +5,7 @@ import gsap from "gsap";
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
-  20,
+  22,
   window.innerWidth / window.innerHeight,
   0.1,
   100,
@@ -31,7 +31,7 @@ const starGeometry = new THREE.SphereGeometry(50, 32, 32);
 const starMaterial = new THREE.MeshPhysicalMaterial({
   map: starTexture,
   side: THREE.BackSide,
-  opacity: 0.4,
+  opacity: 0.6,
   transparent: true,
 });
 
@@ -40,7 +40,7 @@ const starSphere = new THREE.Mesh(starGeometry, starMaterial);
 scene.add(starSphere);
 
 const radius = 1.1;
-const orbitRadius = 3.5;
+const orbitRadius = 4;
 const segments = 32;
 const colors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00];
 const spheres = new THREE.Group();
@@ -51,6 +51,7 @@ const textures = [
   "./volcanic/color.png",
 ];
 
+const spheresMesh = [];
 for (let i = 0; i < 4; i++) {
   const textureLoader = new THREE.TextureLoader();
   const texture = textureLoader.load(textures[i]);
@@ -58,6 +59,8 @@ for (let i = 0; i < 4; i++) {
   const geometry = new THREE.SphereGeometry(radius, segments, segments);
   const material = new THREE.MeshStandardMaterial({ map: texture });
   const sphere = new THREE.Mesh(geometry, material);
+
+  spheresMesh.push(sphere);
 
   const angle = (i / 4) * (Math.PI * 2);
 
@@ -67,8 +70,8 @@ for (let i = 0; i < 4; i++) {
   spheres.add(sphere);
 }
 
-spheres.rotation.x = 0.14;
-spheres.position.y = -0.48;
+spheres.rotation.x = 0.09;
+spheres.position.y = -0.7;
 
 scene.add(spheres);
 
@@ -81,15 +84,67 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
-setInterval(() => {
-  gsap.to(spheres.rotation, {
-    y: `+=${Math.PI / 2}`,
-    duration: 1.5,
-    ease: "expo.inOut",
-  });
-}, 2000);
+// setInterval(() => {
+//   gsap.to(spheres.rotation, {
+//     y: `+=${Math.PI / 2}`,
+//     duration: 1.5,
+//     ease: "expo.inOut",
+//   });
+// }, 2000);
+
+//Throttle wheel handler
+
+let lastWheelTime = 0;
+const throttleDelay = 2000;
+let scrollCount = 0;
+
+function throttlewheelhandler(event) {
+  const currentTime = Date.now();
+  if (currentTime - lastWheelTime >= throttleDelay) {
+    lastWheelTime = currentTime;
+
+    const direction = event.deltaY > 0 ? "down" : "up";
+
+    scrollCount = (scrollCount + 1) % 4;
+
+    const headings = document.querySelectorAll(".heading");
+
+    gsap.to(headings, {
+      duration: 1,
+      y: `-=${100}%`,
+      ease: "power2.inOut",
+    });
+
+    gsap.to(spheres.rotation, {
+      y: `+=${Math.PI / 2}`,
+      duration: 1.5,
+      ease: "power2.inOut",
+    });
+
+    if (scrollCount === 0) {
+      gsap.to(headings, {
+        duration: 1,
+        y: `0`,
+        ease: "power2.inOut",
+      });
+    }
+  }
+}
+
+window.addEventListener("wheel", throttlewheelhandler);
+
+
+const clock = new THREE.Timer();
 const animate = () => {
+  clock.update();
+  const delta = clock.getDelta();
+
   requestAnimationFrame(animate);
+  spheresMesh.forEach(element => {
+    const sphere = element;
+    // sphere.rotation.y += clock.getElapsed() *0.0005;
+    sphere.rotation.y += delta * 0.02;
+  });
   renderer.render(scene, camera);
 };
 
