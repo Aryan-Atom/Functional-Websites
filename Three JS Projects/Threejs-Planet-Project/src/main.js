@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls, RGBELoader } from "three/examples/jsm/Addons.js";
+import { HDRLoader, OrbitControls } from "three/examples/jsm/Addons.js";
 import gsap from "gsap";
 
 const scene = new THREE.Scene();
@@ -14,12 +14,13 @@ scene.add(camera);
 
 //HDRI
 
-const loader = new THREE.TextureLoader();
+const loader = new HDRLoader();
 loader.load(
-  "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/bambanani_sunset.jpg",
+  "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/moonlit_golf_1k.hdr",
   function (hdriTexture) {
     hdriTexture.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = hdriTexture;
+    // scene.environmentIntensity = 2.5;
   },
 );
 
@@ -39,7 +40,7 @@ const starSphere = new THREE.Mesh(starGeometry, starMaterial);
 scene.add(starSphere);
 
 const radius = 1.1;
-const orbitRadius = 3;
+const orbitRadius = 3.5;
 const segments = 32;
 const colors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00];
 const spheres = new THREE.Group();
@@ -66,8 +67,8 @@ for (let i = 0; i < 4; i++) {
   spheres.add(sphere);
 }
 
-spheres.rotation.x = 0.15;
-spheres.position.y = -0.46;
+spheres.rotation.x = 0.14;
+spheres.position.y = -0.48;
 
 scene.add(spheres);
 
@@ -76,6 +77,7 @@ camera.position.z = 8;
 const canvas = document.querySelector("canvas");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
