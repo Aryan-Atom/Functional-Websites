@@ -18,9 +18,8 @@ const material = new Three.ShaderMaterial({
   fragmentShader: fragment,
   side: Three.DoubleSide,
   uniforms: {
-    uTime: {
-      value: 0,
-    },
+    uTime: { value: 0 },
+    uTexture:{value: new Three.TextureLoader().load("./textures/texture.png")}
   },
 });
 

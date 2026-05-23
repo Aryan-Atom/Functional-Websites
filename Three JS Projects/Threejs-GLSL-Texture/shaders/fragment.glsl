@@ -2,14 +2,8 @@
 
 varying vec2 vUv;
 uniform float uTime;
-// varying float noise;
-
-// Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
-
-#ifdef GL_ES
-precision mediump float;
-#endif
+uniform sampler2D uTexture;
+uniform float vNoise;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
@@ -59,8 +53,8 @@ float fbm (in vec2 st) {
 
 void main(){
 
- vec4 color = vec4(0.,0.,0.,1.);
- color.rgb += fbm(vUv*3.0);
+ vec4 color = texture2D(uTexture , vUv);
+ color.rgb+=vNoise + fbm(vUv*10.);
 gl_FragColor= color;
 
 }

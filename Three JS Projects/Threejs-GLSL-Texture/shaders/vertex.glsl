@@ -77,14 +77,15 @@ float cnoise(vec3 P){
 }
 
 
-varying float noise;
+varying float vNoise;
 
 void main()
 {
     vUv=uv;
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-    // noise = cnoise(vec3(modelPosition.xy ,uTime*.1))*.3;
-    // modelPosition.z += noise;
+     vNoise=.6*cnoise(vec3(modelPosition.xy,uTime*.015));
+
+    modelPosition.z+=vNoise;
 
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
