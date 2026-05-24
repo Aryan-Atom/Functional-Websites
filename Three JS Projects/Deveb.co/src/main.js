@@ -4,8 +4,28 @@ import vertexShader from "../shaders/vertexShader.glsl";
 import fragmentShader from "../shaders/fragmentShader.glsl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const lenis = new Lenis({
+  duration: 4, // higher = smoother/slower
+  smoothWheel: true,
+  wheelMultiplier: 1,
+  touchMultiplier: 2,
+  infinite: false,
+  autoRaf: false,
+  lerp: 0.05, 
+});
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 
 const scene = new Three.Scene();
 
