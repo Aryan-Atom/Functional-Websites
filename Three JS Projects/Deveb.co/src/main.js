@@ -16,7 +16,7 @@ const lenis = new Lenis({
   touchMultiplier: 2,
   infinite: false,
   autoRaf: false,
-  lerp: 0.05, 
+  lerp: 0.05,
 });
 
 lenis.on("scroll", ScrollTrigger.update);
