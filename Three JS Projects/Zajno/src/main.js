@@ -1,49 +1,53 @@
-import * as Three from "three";
-import { OrbitControls } from "three/examples/jsm/Addons.js";
-import vertexShader from "../shaders/vertexShader.glsl";
-import fragmentShader from "../shaders/fragmentShader.glsl";
+import LocomotiveScroll from "locomotive-scroll";
 
-const scene = new Three.Scene();
+const scroll = new LocomotiveScroll();
 
-const camera = new Three.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  100,
-);
+// import * as Three from "three";
+// import { OrbitControls } from "three/examples/jsm/Addons.js";
+// import vertexShader from "../shaders/vertexShader.glsl";
+// import fragmentShader from "../shaders/fragmentShader.glsl";
 
-const geometry = new Three.BoxGeometry(1, 1, 1);
-const material = new Three.ShaderMaterial({});
+// const scene = new Three.Scene();
 
-const cube = new Three.Mesh(geometry, material);
-scene.add(cube);
+// const camera = new Three.PerspectiveCamera(
+//   75,
+//   window.innerWidth / window.innerHeight,
+//   0.1,
+//   100,
+// );
 
-camera.position.z = 7;
+// const geometry = new Three.BoxGeometry(1, 1, 1);
+// const material = new Three.ShaderMaterial({});
 
-const canvas = document.querySelector("canvas");
+// const cube = new Three.Mesh(geometry, material);
+// scene.add(cube);
 
-const renderer = new Three.WebGLRenderer({
-  canvas: canvas,
-  antialias: true,
-});
-renderer.setSize(window.innerWidth, window.innerHeight);
+// camera.position.z = 7;
 
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// const canvas = document.querySelector("canvas");
 
-window.addEventListener("resize", (e) => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.updateProjectionMatrix(); // if not added will flatten and stretch the model
-});
+// const renderer = new Three.WebGLRenderer({
+//   canvas: canvas,
+//   antialias: true,
+// });
+// renderer.setSize(window.innerWidth, window.innerHeight);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-const timer = new Three.Timer();
+// window.addEventListener("resize", (e) => {
+//   camera.aspect = window.innerWidth / window.innerHeight;
+//   renderer.setSize(window.innerWidth, window.innerHeight);
+//   camera.updateProjectionMatrix(); // if not added will flatten and stretch the model
+// });
 
-const animate = () => {
-  window.requestAnimationFrame(animate);
-  controls.update();
-  timer.update();
-  renderer.render(scene, camera);
-};
-animate();
+// const controls = new OrbitControls(camera, renderer.domElement);
+
+// const timer = new Three.Timer();
+
+// const animate = () => {
+//   window.requestAnimationFrame(animate);
+//   controls.update();
+//   timer.update();
+//   renderer.render(scene, camera);
+// };
+// animate();
