@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body class="overflow-x-hidden">
-    <div class="main w-full bg-[#ebebeb] font-['Helvetica Now Display']">
+    <div class="main w-full font-['Helvetica Now Display']">
       <!-- ------------------------- Landing Section ---------------------------------- -->
       <div class="landing relative">
         <nav
@@ -31,14 +31,14 @@
         </div>
       </div>
       <!-- ------------------------- Lens Section ---------------------------------- -->
-      <div class="lens-section w-full relative">
+      <div class="lens-section w-full h-[90vh] relative">
         <button
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl bg-white rounded-full px-8 py-4 tracking-tighter"
         >
           Watch Showreel
         </button>
         <img
-          class="w-full object-cover h-[75vh] object-top"
+          class="w-full h-full object-cover object-top"
           src="./lens.png"
           alt=""
         />
@@ -79,7 +79,7 @@
                 <h3 class="text-orange-500">Acquire</h3>
                 Marketplace
               </div>
-              <div class="project-img bg-red-500 w-72 h-72">
+              <div class="project-img w-72 h-72">
                 <img class="object-cover" src="./project-1.png" alt="" />
               </div>
             </div>
@@ -92,7 +92,7 @@
                 <h3 class="text-orange-500">Evergreen</h3>
                 Biotech
               </div>
-              <div class="project-img bg-red-500 w-72 h-72">
+              <div class="project-img w-72 h-72">
                 <img class="object-cover" src="./project-2.png" alt="" />
               </div>
             </div>
@@ -105,7 +105,7 @@
                 <h3 class="text-orange-500">8Finance</h3>
                 Crypto
               </div>
-              <div class="project-img bg-red-500 w-72 h-72">
+              <div class="project-img w-72 h-72">
                 <img class="object-cover" src="./project-3.png" alt="" />
               </div>
             </div>
@@ -149,18 +149,18 @@
         <div
           class="w-full absolute top-0 left-0 py-10 z-[99999] px-10 justify-between flex"
         >
-          <div class="w-96 h-72 overflow-hidden bg-red-900">
+          <div class="w-96 h-72 overflow-hidden">
             <img src="./seven-1.png" alt="" />
           </div>
-          <div class="w-60 h-72 overflow-hidden ml-24 mt-20 bg-red-900">
+          <div class="w-60 h-72 overflow-hidden ml-24 mt-20">
             <img src="./seven-2.png" alt="" />
           </div>
 
-          <div class="w-96 h-72 overflow-hidden bg-red-900">
+          <div class="w-96 h-72 overflow-hidden">
             <img src="./seven-3.png" alt="" />
           </div>
 
-          <div class="w-60 h-72 overflow-hidden mt-20 bg-red-900">
+          <div class="w-60 h-72 overflow-hidden mt-20">
             <img src="./seven-4.png" alt="" />
           </div>
         </div>
@@ -170,10 +170,8 @@
           715
         </div>
       </div>
-      <canvas class=""></canvas>
+      <canvas class="fixed top-0 left-0 z-[-1]"></canvas>
     </div>
-
-
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
