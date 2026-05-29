@@ -112,7 +112,7 @@ const textMaterial = new Three.ShaderMaterial({
   side: Three.DoubleSide,
   uniforms: {
     progress: { value: 0 },
-    direction: { value: 0 },
+    direction: { value: 1 },
   },
 });
 
@@ -145,7 +145,7 @@ window.addEventListener("wheel", (e) => {
   texts[next].scale.set(1, 1, 1);
   texts[next].position.x = direction * 3.5;
 
-  textMaterial.uniforms.direction.value = direction;
+  // textMaterial.uniforms.direction.value = direction;
 
   gsap.to(textMaterial.uniforms.progress, {
     value: 0.5,
