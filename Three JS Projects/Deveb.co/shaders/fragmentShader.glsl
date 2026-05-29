@@ -10,7 +10,7 @@ void main() {
 
     // ---------------- Color Combination 2--------------------
 
-    vec4 color3 = vec4(1.0, 0.87, 0.69, 1.0);
+    vec4 color3 = vec4(1.0, 0.87, 0.69, 1.0);   
     vec4 color4 = vec4(1.0, 0.93, 0.84, 1.0);
 
     float v = smoothstep(-.14, .14, vElevation);
